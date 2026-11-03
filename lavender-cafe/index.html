@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lavender | Cozy Bakery & Café</title>
+  <meta name="description" content="Lavender is a cozy neighborhood bakery and café with fresh pastries, handcrafted coffee, boba and desserts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="cup">
+      <div class="steam"><span></span><span></span><span></span></div>
+      <div class="cup-body"></div>
+    </div>
+    <p class="preloader-text">Brewing something lovely…</p>
+  </div>
+
+  <!-- Custom cursor + scroll progress -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="logo" aria-label="Lavender home">
+        <img src="https://thelavendercafe.netlify.app/images/logo.png" alt="Lavender Bakery Logo"
+             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:'Lavender'}))" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Menu</a></li>
+        <li><a href="#quiz">Find Your Drink</a></li>
+        <li><a href="#choose">Why Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <button class="icon-btn cart-btn" id="cartOpen" aria-label="Open cart">🛍️<span class="cart-count" id="cartCount">0</span></button>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas id="petals"></canvas>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="floaters" aria-hidden="true">
+      <span style="--x:8%;--y:22%;--d:0s">🤎</span>
+      <span style="--x:88%;--y:18%;--d:1s">🧸</span>
+      <span style="--x:14%;--y:72%;--d:2s">☕</span>
+      <span style="--x:80%;--y:70%;--d:.6s">🥐</span>
+      <span style="--x:50%;--y:10%;--d:1.6s">💗</span>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="pill" id="openStatus">Checking hours…</span>
+        <h1 class="hero-title"><span class="shimmer">Lavender</span></h1>
+        <h2 class="typewriter-wrap">"<span id="typewriter"></span><span class="caret">|</span>"</h2>
+        <p>Welcome to Lavender, your cozy neighborhood bakery and café where handcrafted drinks, fresh pastries, and homemade desserts create the perfect place to relax, unwind, and make beautiful memories.</p>
+        <div class="hero-btns">
+          <a href="#about" class="btn btn-primary magnetic">Learn More</a>
+          <a href="#products" class="btn btn-ghost magnetic">Order Now →</a>
+        </div>
+      </div>
+      <div class="hero-img tilt" data-parallax="0.05">
+        <div class="img-frame">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80" alt="Fresh pastries" />
+        </div>
+        <div class="badge badge-a">🥐 Baked fresh daily</div>
+        <div class="badge badge-b">⭐ 4.9 guest rating</div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>☕ Handcrafted Coffee</span><span>🥐 Fresh Pastries</span><span>🧋 Boba Drinks</span><span>🍰 Artisan Cakes</span><span>🍪 Homemade Cookies</span><span>💜 Cozy Vibes</span>
+      <span>☕ Handcrafted Coffee</span><span>🥐 Fresh Pastries</span><span>🧋 Boba Drinks</span><span>🍰 Artisan Cakes</span><span>🍪 Homemade Cookies</span><span>💜 Cozy Vibes</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>About Lavender</h2>
+        <p>A little warmth in every bite.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-img reveal from-left tilt">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Coffee" />
+        </div>
+        <div class="about-text reveal from-right">
+          <h3>Your Home Away From Home</h3>
+          <p>Lavender is a cozy bakery and café that serves fresh, scratch-made pastries, artisan cakes, desserts, handcrafted coffees, creamy lattes, refreshing boba drinks, and more.</p>
+          <p>We believe everyone deserves a peaceful place to enjoy delicious food, meaningful conversations, or even quiet moments alone. Every recipe is prepared with care to make each visit feel comforting and memorable.</p>
+          <div class="problem-card">
+            <h4>💜 The Problem We Solve</h4>
+            <p>Modern life can be busy and stressful. Lavender offers a relaxing space with high-quality baked goods, comforting drinks, and exceptional hospitality so every guest can slow down and enjoy life's little moments.</p>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><b data-count="12000">0</b><span>Pastries baked</span></div>
+        <div class="stat reveal"><b data-count="4800">0</b><span>Happy guests</span></div>
+        <div class="stat reveal"><b data-count="35">0</b><span>Signature drinks</span></div>
+        <div class="stat reveal"><b data-count="100">0</b><span>% from scratch</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="section alt" id="products">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Our Menu</h2>
+        <p>Freshly baked with love every day.</p>
+      </div>
+      <div class="menu-tools reveal">
+        <div class="tabs" id="menuTabs">
+          <button class="tab active" data-cat="all">All</button>
+          <button class="tab" data-cat="pastries">Pastries</button>
+          <button class="tab" data-cat="cakes">Cakes</button>
+          <button class="tab" data-cat="coffee">Coffee</button>
+          <button class="tab" data-cat="desserts">Desserts</button>
+          <button class="tab" data-cat="boba">Boba</button>
+          <button class="tab" data-cat="breakfast">Breakfast</button>
+          <button class="tab" data-cat="favs">♥ Favourites</button>
+        </div>
+        <div class="search-sort">
+          <input type="search" id="menuSearch" placeholder="Search the menu…" aria-label="Search menu" />
+          <select id="menuSort" aria-label="Sort menu">
+            <option value="default">Sort: Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="az">Name: A–Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <p class="empty" id="menuEmpty" hidden>Nothing here yet 🍃 Try another search or category.</p>
+      <p class="note reveal">Prices shown are sample prices. Edit them in <code>js/main.js</code>.</p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="section" id="quiz">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>What Should I Order?</h2>
+        <p>Answer three quick questions and we'll pick your perfect treat.</p>
+      </div>
+      <div class="quiz-card reveal" id="quizCard">
+        <div class="quiz-progress"><span id="quizBar"></span></div>
+        <div id="quizBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose -->
+  <section class="section alt" id="choose">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Why Choose Lavender?</h2>
+        <p>More than just a bakery.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal tilt"><div class="why-icon">🥖</div><h3>Scratch-Baked Daily</h3><p>Every pastry is lovingly baked from scratch using quality ingredients.</p></div>
+        <div class="why-card reveal tilt"><div class="why-icon">☕</div><h3>Comforting Drinks</h3><p>Fresh coffee, creamy lattes and delicious handcrafted beverages.</p></div>
+        <div class="why-card reveal tilt"><div class="why-icon">🌿</div><h3>Relaxing Atmosphere</h3><p>A peaceful escape from busy everyday life.</p></div>
+        <div class="why-card reveal tilt"><div class="why-icon">💜</div><h3>Exceptional Hospitality</h3><p>Friendly service that makes every guest feel welcome.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>A Peek Inside</h2>
+        <p>Tap any photo to take a closer look.</p>
+      </div>
+      <div class="gallery" id="galleryGrid">
+        <img class="reveal" loading="lazy" src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=900&q=80" alt="Pastries" />
+        <img class="reveal" loading="lazy" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80" alt="Cake" />
+        <img class="reveal" loading="lazy" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Coffee" />
+        <img class="reveal" loading="lazy" src="https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=crop&w=900&q=80" alt="Boba" />
+        <img class="reveal" loading="lazy" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Latte" />
+        <img class="reveal" loading="lazy" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Fresh pastries" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours -->
+  <section class="section alt" id="hours">
+    <div class="container hours-wrap">
+      <div class="reveal from-left">
+        <div class="section-head left"><h2>Opening Hours</h2><p>Come say hi — we saved you a seat.</p></div>
+        <ul class="hours-list" id="hoursList"></ul>
+      </div>
+      <div class="clock-card reveal from-right">
+        <div class="clock-status" id="clockStatus">—</div>
+        <div class="clock-time" id="clockTime">--:--</div>
+        <p id="clockNote">Hours are samples — edit in <code>js/main.js</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Customer Reviews</h2>
+        <p>What our lovely guests say.</p>
+      </div>
+      <div class="carousel reveal" id="carousel">
+        <div class="carousel-track" id="carouselTrack"></div>
+        <button class="car-btn prev" id="carPrev" aria-label="Previous review">‹</button>
+        <button class="car-btn next" id="carNext" aria-label="Next review">›</button>
+        <div class="dots" id="carDots"></div>
+      </div>
+      <form class="review-form reveal" id="reviewForm" novalidate>
+        <h3>Leave a review</h3>
+        <div class="row">
+          <input type="text" id="revName" placeholder="Your name" required />
+          <div class="star-input" id="starInput" role="radiogroup" aria-label="Rating">
+            <button type="button" data-v="1">★</button><button type="button" data-v="2">★</button><button type="button" data-v="3">★</button><button type="button" data-v="4">★</button><button type="button" data-v="5">★</button>
+          </div>
+        </div>
+        <textarea id="revText" rows="3" placeholder="Tell us about your visit…" required></textarea>
+        <button class="btn btn-primary" type="submit">Post Review</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Reservation -->
+  <section class="section alt" id="reserve">
+    <div class="container narrow">
+      <div class="section-head reveal">
+        <h2>Reserve a Table</h2>
+        <p>Pick a time and we'll have your corner ready.</p>
+      </div>
+      <form class="card-form reveal" id="reserveForm" novalidate>
+        <div class="row">
+          <label>Name<input type="text" id="rName" required /></label>
+          <label>Phone<input type="tel" id="rPhone" required /></label>
+        </div>
+        <div class="row">
+          <label>Date<input type="date" id="rDate" required /></label>
+          <label>Time<input type="time" id="rTime" required /></label>
+        </div>
+        <label>Guests
+          <div class="stepper">
+            <button type="button" id="gMinus">−</button><output id="gCount">2</output><button type="button" id="gPlus">+</button>
+          </div>
+        </label>
+        <label>Special request (optional)<textarea id="rNote" rows="2" placeholder="Birthday, quiet corner, allergies…"></textarea></label>
+        <button class="btn btn-primary full" type="submit">Request Reservation</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <div class="section-head reveal"><h2>Good to Know</h2><p>Quick answers to common questions.</p></div>
+      <div class="faq">
+        <details class="reveal"><summary>Do you do custom celebration cakes?</summary><p>Yes! Message us a few days ahead with your flavour, size and date and we'll bake it fresh.</p></details>
+        <details class="reveal"><summary>Can I study or work at Lavender?</summary><p>Absolutely. Many of our guests settle in with a latte and a laptop — it's one of our favourite things.</p></details>
+        <details class="reveal"><summary>Do you offer takeaway?</summary><p>Every item can be packed to go. Use the cart on this page and send your order straight to us on WhatsApp.</p></details>
+        <details class="reveal"><summary>Are there vegetarian options?</summary><p>Plenty — ask our team and we'll point you to the best picks.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container reveal">
+      <h2>Ready for Something Sweet?</h2>
+      <p>Visit Lavender today and enjoy fresh pastries, handcrafted drinks, and a cozy atmosphere made just for you.</p>
+      <a href="#contact" class="btn btn-light magnetic">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Get In Touch</h2>
+        <p>We'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal tilt"><div class="why-icon">📞</div><h4>Phone</h4><a href="tel:07070434854">07070434854</a></div>
+        <div class="contact-card reveal tilt"><div class="why-icon">✉️</div><h4>Email</h4><a href="mailto:eatatlavender@gmail.com">eatatlavender@gmail.com</a></div>
+        <div class="contact-card reveal tilt"><div class="why-icon">📍</div><h4>Location</h4><span>Our Cozy Café</span></div>
+      </div>
+      <form class="newsletter reveal" id="newsletter" novalidate>
+        <h3>Join the Lavender Club 💌</h3>
+        <p>Get sweet news and seasonal menu drops. No spam, ever.</p>
+        <div class="nl-row">
+          <input type="email" id="nlEmail" placeholder="you@example.com" required />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="https://thelavendercafe.netlify.app/images/light%20logo.png" alt="Lavender Logo"
+             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text light',textContent:'Lavender'}))" />
+        <p>A welcoming space where every sip and bite feels comforting, like home.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">📸</a><a href="#" aria-label="Facebook">📘</a><a href="#" aria-label="TikTok">🎵</a><a href="#" aria-label="X">🐦</a>
+        </div>
+      </div>
+      <div class="foot-links"><a href="#hero">Home</a><a href="#about">About</a><a href="#products">Menu</a><a href="#contact">Contact</a></div>
+    </div>
+    <p class="copy">© 2026 Lavender Bakery & Café. All Rights Reserved.</p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Your order">
+    <div class="drawer-head"><h3>Your Order</h3><button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button></div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total"><span>Total</span><b id="cartTotal">₦0</b></div>
+      <div class="drawer-btns">
+        <button class="btn btn-ghost" id="cartClear">Clear</button>
+        <button class="btn btn-primary" id="cartCheckout">Send via WhatsApp</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox"><button class="icon-btn lb-close" id="lbClose" aria-label="Close">✕</button><img id="lbImg" alt="" /></div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="modal-emoji" id="modalEmoji">🎉</div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+      <button class="btn btn-primary" id="modalClose">Lovely!</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <canvas id="confetti"></canvas>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
